@@ -2,8 +2,6 @@
 
 We are going to make a rock paper scissors game where the user plays again the computer. We will learn to use a text input, a button, and adding text to the screen.
 
-Complete code for this example can be found in the `code` folder of this week's class materials.
-
 First, make a basic HTML page called index.html, and remember the `<script>` tag to include our JavaScript file called index.js:
 
 <pre><code>
