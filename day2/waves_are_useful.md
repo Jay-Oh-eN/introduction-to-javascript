@@ -12,7 +12,7 @@ index.html
 &lt;html&gt;
     &lt;head&gt;
         &lt;script type="text/javascript" src="../p5/p5.js"&gt;&lt;/script&gt;
-        &lt;script type="text/javascript" src="script.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript" src="sketch.js"&gt;&lt;/script&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
