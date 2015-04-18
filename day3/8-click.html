@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #bug {
+      border: 1px solid red;
+      position: relative;
+      top: 200px;
+      left: 200px;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+</head>
+
+<body>
+  <h1>Try and catch this little bug!</h1>
+  <img id="bug" src="http://content.mycutegraphics.com/graphics/bug/grasshopper-cute.png">
+
+  <script>
+
+    var bug = jQuery("#bug");
+
+    // jQuery also has a "click" function which should be passed a callback.
+    // The callback will be called whenever the element that was selected
+    // is clicked on by the user. 
+    //
+    // Also note that you can just create a function directly, without assigning
+    // it to a variable. Just like writing the number 10 literally, we can write
+    // function literals!
+    bug.click(function (e) {
+        bug.css("left", 0);
+    });
+
+    var updateBugStyles = function() {
+        var bugLeft = bug.css("left");
+        var bugLeftAsNumber = parseInt(bugLeft);
+        bug.css("left", bugLeftAsNumber + 10);
+    };
+
+    setInterval(updateBugStyles, 100);
+  </script>
+</body>
+
+</html>
+

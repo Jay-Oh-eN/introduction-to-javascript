@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #bug {
+      border: 1px solid red;
+      position: relative;
+      top: 200px;
+      left: 200px;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+</head>
+
+<body>
+  <h1>Try and catch this little bug!</h1>
+  <img id="bug" src="http://content.mycutegraphics.com/graphics/bug/grasshopper-cute.png">
+
+  <script>
+
+    var bug = jQuery("#bug");
+
+
+    // jQuery objects have all sorts of cool functions. We're going to use
+    // the "css" function ( http://api.jquery.com/css/ ) to read off the bug's left
+    var bugLeft = bug.css("left");
+
+    // show it in the console to see what it looks like (should say "200px")
+    console.log(bugLeft);
+
+    // if you supply two parameters, the function will set the property to be the second parameter.
+    // set the bug's left to be 400
+    bug.css("left", 400);
+    // The element is now no longer where we said it was in the <style>
+    // that's because the <style> is only a blueprint telling the elements
+    // what to start off looking like, but the properties can be overriden
+
+
+    // add some fashion to that border
+    bug.css("border", "4px dashed blue");
+  </script>
+</body>
+
+</html>
+

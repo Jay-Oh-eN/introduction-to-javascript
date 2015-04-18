@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #bug {
+      border: 1px solid red;
+      position: relative;
+      top: 200px;
+      left: 200px;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+</head>
+
+<body>
+  <h1>Try and catch this little bug!</h1>
+  <img id="bug" src="http://content.mycutegraphics.com/graphics/bug/grasshopper-cute.png">
+
+  <script>
+
+    var bug = jQuery("#bug");
+    var bugLeft = bug.css("left");
+    console.log(bugLeft);
+
+    // We've now moved the code for changing the bug's CSS into its own function.
+    // Remember, a function is a way to bundle commands together and run them all.
+    //
+    // Functions accept parameters, which are variables you can pass into the function
+    // when you call it that can affect what the function does.
+    //
+    // Functions, like numbers, booleans, and strings, and arrays, can be stored
+    // in variables and passed around - in this case, we're creating a function and
+    // saving it in the variable "updateBugStyles".
+    var updateBugStyles = function() {
+        // Functions can use variables that were declared at the same place that
+        // the function itself was declared, so we can use the "bug" variable
+        // here.
+        bug.css("left", 400);
+        bug.css("border", "4px dashed blue");
+    };
+
+    // We can run a function by writing the function name,
+    // followed by an open parentheses,
+    // followed by the parameters to pass,
+    // followed by a close parentheses.
+    //
+    // We've been doing this already! "jQuery" is just a function!
+    // bug.css is also just another function
+
+
+
+    // Now we're going to introduce the setTimeout function.
+    // setTimeout is special in that it asks for *another function*
+    // as one of its parameters. setTimeout will run the function
+    // that you've given it after some number of milliseconds
+    // which is the second parameter.
+    //
+    // a function which is passed into another function, to be called
+    // by that other function sometime later, is a *callback*.
+    setTimeout(updateBugStyles, 2000);
+
+  </script>
+</body>
+
+</html>
+

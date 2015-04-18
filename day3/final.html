@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #bug {
+      border: 1px solid red;
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+</head>
+
+<body>
+<!-- We use a span for the caught-count so it stays inline with the other text (try using a <p> or a <div> instead and see what happens -->
+<h1>Try and catch this little bug! You've caught me <span id="caught-count">0</span> times! </h1>
+  <img id="bug" src="http://content.mycutegraphics.com/graphics/bug/grasshopper-cute.png">
+  <script>
+    var caughtCount = 0;
+
+    $("#bug").click(function(e) {
+        caughtCount += 1;
+        // jQuery has a "text" function which will set the text of the selected element
+        $("#caught-count").text(caughtCount);
+
+        $("#bug").css("left", 0);
+        // Math.random() gives a random number between 0 and 1; multiply by 500 to get a random pixel from 0 to 500
+        $("#bug").css("top", Math.random() * 500);
+    });
+
+    // A function can have a name, which we put between the "function" keyword and the parentheses. Javascript will automatically create a variable for the function.
+    function update() {
+        var oldLeftString = $("#bug").css("left");
+        var oldLeftNumber = parseInt(oldLeftString);
+        var newLeft = oldLeftNumber + 1;
+        // wrap back to 0 if the position is too far right
+        if (newLeft > 500) {
+            newLeft = 0;
+        }
+        $("#bug").css("left", newLeft);
+    }
+
+    // 16 milliseconds = about 60fps
+    setInterval(update, 16);
+  </script>
+</body>
+
+</html>
+

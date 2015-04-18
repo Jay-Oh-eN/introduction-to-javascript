@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #bug {
+      border: 1px solid red;
+      position: relative;
+      top: 200px;
+      left: 200px;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+</head>
+
+<body>
+  <h1>Try and catch this little bug!</h1>
+  <img id="bug" src="http://content.mycutegraphics.com/graphics/bug/grasshopper-cute.png">
+
+  <script>
+
+    var bug = jQuery("#bug");
+
+    // plan of attack - every 100 ms, take the current "left", add 10px to it,
+    // and set that as the new "left"
+    var updateBugStyles = function() {
+        // the bugLeft variable is now declared *inside* the function
+        // so it will get re-created every time the the function is run.
+        //
+        // be careful! jQuery's css function always returns a string ("200px").
+        var bugLeft = bug.css("left");
+        // the parseInt function converts a string into the number it represents,
+        // stopping as soon as it sees something wrong (in this case, it'll ignore the "px" and extract the 200)
+        var bugLeftAsNumber = parseInt(bugLeft);
+
+        // move the bug to the right 10px
+        bug.css("left", bugLeftAsNumber + 10);
+    };
+
+    setInterval(updateBugStyles, 100);
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #bug {
+      border: 1px solid red;
+      position: relative;
+      top: 200px;
+      left: 200px;
+    }
+  </style>
+
+  <!-- this is a comment in HTML -->
+
+  <!-- Create a script tag to run a specific javascript file on the internet.
+       This one loads the jQuery library ( https://jquery.com/ ), used to manipulate our webpage in Javascript. -->
+  <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+</head>
+
+<body>
+  <h1>Try and catch this little bug!</h1>
+  <img id="bug" src="http://content.mycutegraphics.com/graphics/bug/grasshopper-cute.png">
+
+  <!-- Create another script tag - this one will run whatever code is inside it.
+       Put it after the <img>, otherwise we can't access the image element. -->
+  <script>
+
+
+    // This is a comment in JavaScript
+
+    // To use jQuery, we call the "jQuery" function, passing in the CSS selector
+    // for the element we want to select as a string (don't do anything with it yet):
+    var bug = jQuery("#bug");
+    // "bug" is now a jQuery object that represents our <img> tag in the HTML,
+    // not to be confused with the <img> tag's id - we use the id named "bug"
+    // to create a jQuery object, which is assigned to the javascript variable
+    // also named "bug"
+  </script>
+</body>
+
+</html>
+
